@@ -14,17 +14,17 @@ Conky theme with weather support and a spiffy layout:
 ### Installation:
 
 - Copy the **.conky-google-now** and **.conkyrc** files to your home folder
-- Install the included **Play** font in **~/.fonts/truetype/play**, then update your font cache with: ```sudo fc-cache -fv```
-- Copy the **logos/** folder anywhere, but *update the 3 references* within **.conkyrc** (lines 65, 80, 87) - the same can actually be done with the **.conky-google-now** folder which contains the weather icons
+- Install the included **Play** font in **~/.fonts/truetype/play**, then update your font cache with: **```sudo fc-cache -fv```**
+- Copy the **logos/** folder anywhere, but *update the 3 references* within **.conkyrc** (**lines 65, 80, 87**) - the same can actually be done with the **.conky-google-now/** folder which contains the weather icons
  
 ### .conkyrc Required edits for personalized info:
 
-- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing %22toronto%22 with %22YOUR_CITY_NAME%22 (you can pop this URL in a browser to inspect the response)
+- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing **```%22toronto%22```** with **```%22YOUR_CITY_NAME%22```** (you can pop this URL in a browser to inspect the response)
 - **[line 62]** Replace the hardcoded data
 - **[line 65]** Edit the CPU name/family
 - **[line 99-101]** Edit the disk paths
 - **[line 103-105]** Edit the disks to monitor r/w speeds
-- **[line 106-108]** Replace the **eno1** network interface with whatever yours is
+- **[line 106-108]** Replace the **```eno1```** network interface with whatever yours is
 
 ### Notes:
 
