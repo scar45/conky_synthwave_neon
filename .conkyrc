@@ -70,7 +70,7 @@ ${voffset -10}${color 73D216}${cpugraph 30,73 cpu1}${goto 93}${cpugraph 30,73 cp
 ${voffset -20}${color 73D216}${cpugraph 30,73 cpu5}${goto 93}${cpugraph 30,73 cpu6}${goto 171}${cpugraph 30,73 cpu7}${goto 250}${cpugraph 30,73 cpu8}
 ${voffset -15}${font Play:size=16}${color C3EC9C}${cpu cpu5}%${goto 92}${cpu cpu6}%${goto 170}${cpu cpu7}%${goto 248}${cpu cpu8}%$font
 ${voffset -7}${color 777777}${stippled_hr}$color
-${voffset 7}PROCESS (${processes}) $alignr ${color 73D216}CPU%$color   MEM%   PID
+${voffset 7}PROCESS (${processes}) $alignr ${color FFCC00}CPU%$color   MEM%   PID
 ${color #b4ebff}${top name 1} $alignr${top cpu 1}  ${top mem 1}   ${top pid 1}
 ${color #77d3f4}${top name 2} $alignr${top cpu 2}  ${top mem 2}   ${top pid 2}
 ${color #33b5e5}${top name 3} $alignr${top cpu 3}  ${top mem 3}   ${top pid 3}
@@ -88,7 +88,7 @@ ${image logos/corsair-logo.png -p 0,850 -s 64x64}${goto 100}${alignr}${color B03
 ${goto 100}${voffset -28}${font Play:bold:size=20}${mem}$font
 ${goto 100}${font Play:bold:size=14} / ${memmax}$font${alignr}${membar 12,100}
 ${color 777777}${stippled_hr}$color
-${voffset 5}PROCESS (${processes}) $alignr CPU%   ${color B03BC3}MEM%$color   PID
+${voffset 5}PROCESS (${processes}) $alignr CPU%   ${color FFCC00}MEM%$color   PID
 ${color #DA9BE3}${top_mem name 1} $alignr${top_mem cpu 1}  ${top_mem mem 1}   ${top_mem pid 1}
 ${color #D77FE3}${top_mem name 2} $alignr${top_mem cpu 2}  ${top_mem mem 2}   ${top_mem pid 2}
 ${color #D14EE3}${top_mem name 3} $alignr${top_mem cpu 3}  ${top_mem mem 3}   ${top_mem pid 3}
