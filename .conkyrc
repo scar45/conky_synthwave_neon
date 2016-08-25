@@ -42,7 +42,7 @@ conky.config = {
 }
 
 conky.text = [[
-${execi 300 curl -s "https://query.yahooapis.com/v1/public/yql?q=select+*+from+weather.forecast+where+woeid+in+(select+woeid+from+geo.places(1)+where+text%3d%22toronto%22)+and+u%3d%22c%22" -o ~/.cache/weather.xml}
+${execi 300 curl -s "https://query.yahooapis.com/v1/public/yql?q=select+*+from+weather.forecast+where+woeid+in+(select+woeid+from+geo.places(1)+where+text%3d%22{{{{{YOUR_CITY_NAME}}}}}%22)+and+u%3d%22c%22" -o ~/.cache/weather.xml}
 ${voffset -10}$alignr${font Play:size=18}${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "city=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}, ${execi 300 grep "yweather:location" ~/.cache/weather.xml | grep -o "country=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
 ${voffset 10}  ${color eeeeee}${font Play:bold:size=16}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tr '[a-z]' '[A-Z]' | awk 'NR==1{print $1}'}${font}
 ${voffset -10}${color bbbbbb}${font Play:size=90}${alignr}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${voffset -51}${font Play:bold:size=32}°C${font}${voffset -35}$color

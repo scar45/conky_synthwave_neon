@@ -9,17 +9,17 @@ Conky theme with weather support and a spiffy layout:
 
 - **[conky](https://github.com/brndnmtthws/conky)**  v1.10+, as the new config file uses Lua syntax
 - **[apcaccess](http://linux.die.net/man/8/apcaccess)** for reading the *Load* level of the UPS
-- (Proprietary) **[nVidia drivers](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)** for reading GPU status
+- (Proprietary) **[nVidia drivers](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)** for reading GPU status (I've only ever tried with these, other GPUs may report fine too ofc)
 
 ### Installation:
 
 - Copy the **.conky-google-now** and **.conkyrc** files to your home folder
 - Install the included **Play** font in **~/.fonts/truetype/play**, then update your font cache with: **```sudo fc-cache -fv```**
 - Copy the **logos/** folder anywhere, but *update the 3 references* within **.conkyrc** (**lines 65, 80, 87**) - the same can actually be done with the **.conky-google-now/** folder which contains the weather icons
- 
+
 ### .conkyrc Required edits for personalized info:
 
-- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing **```%22toronto%22```** with **```%22YOUR_CITY_NAME%22```** (you can pop this URL in a browser to inspect the response)
+- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing **```{{{{{YOUR_CITY_NAME}}}}}```** (discard curly brackets) with your desired city (you can pop this URL in a browser to inspect the response)
 - **[line 62]** Replace the hardcoded data
 - **[line 65]** Edit the CPU name/family
 - **[line 99-101]** Edit the disk paths
@@ -31,7 +31,7 @@ Conky theme with weather support and a spiffy layout:
 - This layout was built for 1440p resolution, but you can adapt it to 1080p (or anything else really) by simply adding/removing some elements/lines
 - The modified *conky-google-now* icons and code are from [satya164](http://satya164.deviantart.com/art/Conky-Google-Now-366545753)
 - The current weather text in the preview is partially borked (reads "Mostly") -- this shouldn't be the case once you've updated the Yahoo! URL to your city
-- The music text that is near the bottom, as well as the Prev/Stop/Play/Next buttons, are not from this Conky theme. They are from the **gmusicbrowser** Desktop plugin
+- The music text that is near the bottom, as well as the Prev/Stop/Play/Next buttons, are not from this Conky theme. They are from the **gmusicbrowser** desktop plugin
 
 ### Donations from awesome people
 
