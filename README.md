@@ -35,7 +35,7 @@ Conky theme with weather support and a spiffy layout:
 
 ### Donations from awesome people
 
-It has taken me a long while to build and perfect this layout, so if you'd like, you can toss some **Bitcoin** my way to:
+It has taken me a long while to build and perfect this layout, so if you'd like, you can toss some **Bitcoin** dust my way to:
 
 ![Bitcoin and cryptocurrency rock!](icon-btc.png) **```1PaV8LVJTqwt23M9WXK4jcVu2Bp6rWHwnv```**
 
