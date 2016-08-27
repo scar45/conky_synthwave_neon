@@ -19,9 +19,9 @@ Conky theme with weather support and a spiffy layout:
 
 ### .conkyrc Required edits for personalized info:
 
-- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing **```{{{{{YOUR_CITY_NAME}}}}}```** (discard curly brackets) with your desired city (you can pop this URL in a browser to inspect the response)
+- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing **```{{{{{YOUR_CITY_NAME}}}}}```** (discard curly brackets) with your desired city -- *if your city name contains spaces, replace any with ```%20```* (you can pop this URL in a browser to inspect the response)
 - **[line 62]** Replace the hardcoded data
-- **[line 65]** Edit the CPU name/family
+- **[line 65]** (Optional) If the value of ```/proc/cpuinfo``` is too long, it could push the CPU temp out of view -- feel free to hardcode it by replacing ```${execi 300 cat /proc/cpuinfo |grep 'model name'|sort -u|awk -F: '{ print $2; }'|awk -F: \ '{print $1}'}``` with anything
 - **[line 99-101]** Edit the disk paths
 - **[line 103-105]** Edit the disks to monitor r/w speeds
 - **[line 106-108]** Replace the **```eno1```** network interface with whatever yours is

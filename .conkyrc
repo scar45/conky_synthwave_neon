@@ -62,7 +62,7 @@ ${voffset 5}${color FFDDDD}$nodename $sysname $kernel
        on $machine GNU/Linux using XFCE$color
 ${voffset 10}System Uptime:${font Play:size=18}$alignr${uptime}$font
 ${voffset 5}${color FB6D51}[ CPU ] ${voffset 2}${hr 2}${voffset 0}$color
-${image logos/intel-core-i7-logo.png -p 0,391 -s 72x72}${voffset 5}${goto 90}${color 77d3f4}Intel® Core™ i7-6800K${voffset -8}${alignr}${color FFCC00}${font Play:Bold:size=22}${acpitemp}${font Play:Bold:size=13}°C
+${image logos/intel-core-i7-logo.png -p 0,391 -s 72x72}${voffset 5}${goto 90}${color 77d3f4}${execi 300 cat /proc/cpuinfo |grep 'model name'|sort -u|awk -F: '{ print $2; }'|awk -F: \ '{print $1}'}${voffset -8}${alignr}${color FFCC00}${font Play:Bold:size=22}${acpitemp}${font Play:Bold:size=13}°C
 ${voffset 3}${goto 90}${color FFCC00}${font Play:Bold:size=20}${voffset -4}${freq_g} GHz$color$font ${color 73D216}${voffset -10}${goto 225}${cpugauge 19,40} ${alignr}${font Play:bold:size=22}${cpu cpu0}${font Play:size=13}%${font}${font Play:size=6} ${font}
 ${voffset -7}${color 777777}${stippled_hr}$color
 ${font Play:size=16}${color C3EC9C}${cpu cpu1}%${goto 92}${cpu cpu2}%${goto 170}${cpu cpu3}%${goto 248}${cpu cpu4}%
