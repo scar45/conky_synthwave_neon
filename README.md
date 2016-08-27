@@ -29,8 +29,8 @@ Conky theme with weather support and a spiffy layout:
 ### Notes:
 
 - This layout was built for 1440p resolution, but you can adapt it to 1080p (or anything else really) by simply adding/removing some elements/lines
-- The modified *conky-google-now* icons and code are from [satya164](http://satya164.deviantart.com/art/Conky-Google-Now-366545753)
-- The current weather text in the preview is partially borked (reads "Mostly") -- this shouldn't be the case once you've updated the Yahoo! URL to your city
+- The modified *conky-google-now* weather parsing code is from [satya164](http://satya164.deviantart.com/art/Conky-Google-Now-366545753)
+- The VClouds weather icons are from [VClouds](http://vclouds.deviantart.com/art/VClouds-Weather-Icons-179152045)
 - The music text that is near the bottom, as well as the Prev/Stop/Play/Next buttons, are not from this Conky theme. They are from the **gmusicbrowser** desktop plugin
 
 ### Donations from awesome people
