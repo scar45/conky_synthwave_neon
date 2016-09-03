@@ -30,6 +30,7 @@ conky.config = {
    own_window_type = 'desktop',
    own_window_transparent = false,
    own_window_argb_visual = true,
+   own_window_argb_value = 255,
    own_window_hints = 'undecorated,skip_taskbar,skip_pager,below',
    stippled_borders = 0,
    text_buffer_size = 512,
