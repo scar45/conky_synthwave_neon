@@ -70,7 +70,7 @@ ${voffset 0}${font Exo 2:semibold:size=11}${color 77d3f4}Available Updates: ${vo
 ${voffset 0}${font Exo 2:semibold:size=11}${color 77d3f4}UPS Current Load: ${voffset -3}${font Exo 2:light:size=13}${alignr}${color D77FE3}${execi 30 apcaccess | grep 'LOAD' | awk '{print $3}'}%${font}
 ### CPU
 ${voffset 10}${font Exo 2:semibold}${color D14EE3}[ CPU ] ${voffset 2}${hr 2}${voffset 0}$color
-${image ~/Design/icons/intel-core-i7-logo.png -p 0,377 -s 67x50}${color 77d3f4}${voffset 5}${alignr}Intel® Core™ i7-6800K
+${image ~/Design/icons/intel-core-i7-logo.png -p 0,379 -s 72x50}${color 77d3f4}${voffset 5}${alignr}Intel® Core™ i7-6800K
 ${voffset 0}${alignr}${color D77FE3}${font Exo 2:light:size=20}${freq_g} GHz  @  ${acpitemp}${font Exo 2:semibold:size=13}°C
 ${voffset 10}${color 75b704}${font Exo 2:light:size=20} ${cpu cpu0}% ${voffset 3}${alignr}${cpugraph 32,215} ${voffset -10}${alignr}
 ${voffset -5}${color 777777}${stippled_hr}
