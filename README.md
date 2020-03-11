@@ -44,8 +44,8 @@ This theme will parse that JSON file (`~/.cache/weather.json`) on your local mac
 
 This layout was built for 1440p resolution, but you can adapt it by simply adding/removing anything really.
 
-Hope you enjoy using this conky theme, and if you'd like, you can support me on [Ko-Fi](https://ko-fi.com/scar45). Thanks!
+Hope you enjoy using this conky theme, and if you'd like, you can:
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N51HSDE)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N51HSDE) ...Thanks!
 
 /eof
