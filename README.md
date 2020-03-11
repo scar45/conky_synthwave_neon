@@ -33,17 +33,19 @@ This theme will parse that JSON file (`~/.cache/weather.json`) on your local mac
 
 ### .conkyrc edits for personalized info:
 
-- [**line 19**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L19) Set `minimum_height` to your screen resolution height
-- [**line 38**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L38) Set `update_interval` to your desired refresh interval (default 1s)
-- [**line 70**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L70) Remove if you do not use `apcaccess` to obtain UPS status
-- [**line 73**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L73) CPU model and optionally change image
-- [**line 77**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L77) CPU cores (if not 12)
-- [**line 113-116**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L113) Disk mapping for I/O stats, disk free, etc.
+- [**line 19**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L19) / Set `minimum_height` to your screen resolution height
+- [**line 38**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L38) / Set `update_interval` to your desired refresh interval (default 1s)
+- [**line 70**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L70) / Remove if you do not use `apcaccess` to obtain UPS status
+- [**line 73**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L73) / CPU model and optionally change image
+- [**line 77**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L77) / CPU cores (if not 12)
+- [**line 113-116**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L113) / Disk mapping for I/O stats, disk free, etc.
 
 ### Notes:
 
 This layout was built for 1440p resolution, but you can adapt it by simply adding/removing anything really.
 
-Hope you enjoy using this conky theme!
+Hope you enjoy using this conky theme, and if you'd like, you can support me on [Ko-Fi](https://ko-fi.com/scar45). Thanks!
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N51HSDE)
 
 /eof
