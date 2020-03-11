@@ -50,31 +50,38 @@ conky.text = [[
 # blue == 77d3f4
 # blue 2 == 33b5e5
 # blue 3 == 0099cc
+# green == 75b704
 #
+### WEATHER
 ${color eeeeee}${font Exo 2:size=50:thin}${execi 60 cat ~/.cache/weather.json | json currently.temperature | rev | cut -c 4- | rev}${voffset -30}${font Exo 2:size=24}°C${font}$color
 ${voffset 40}${color eeeeee}${font Exo 2:bold:size=16}${execi 60 cat ~/.cache/weather.json | json currently.summary}${font}${color}
 ${voffset 0}${execi 60 cp -f ~/Design/icons/weather/$(cat ~/.cache/weather.json | json currently.icon).png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 160,10 -s 120x75}
 ${voffset -13}${color 777777}${stippled_hr}$color
+### WEATHER FORECAST
 ${voffset -10}${font Exo 2:bold:size=12}${voffset 10}${goto 22}${execi 60 date -d @$(cat ~/.cache/weather.json | json daily.data.[0].time) | cut -d' ' -f1}${goto 95}${execi 60 date -d @$(cat ~/.cache/weather.json | json daily.data.[1].time) | cut -d' ' -f1}${goto 175}${execi 60 date -d @$(cat ~/.cache/weather.json | json daily.data.[2].time) | cut -d' ' -f1}${goto 255}${execi 60 date -d @$(cat ~/.cache/weather.json | json daily.data.[3].time) | cut -d' ' -f1}$font
 ${execi 60 cp -f ~/Design/icons/weather/$(cat ~/.cache/weather.json | json daily.data.[0].icon).png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 0,165 -s 45x30}${execi 60 cp -f ~/Design/icons/weather/$(cat ~/.cache/weather.json | json daily.data.[1].icon).png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 70,165 -s 45x30}${execi 60 cp -f ~/Design/icons/weather/$(cat ~/.cache/weather.json | json daily.data.[2].icon).png ~/.cache/weather-4.png}${image ~/.cache/weather-4.png -p 150,165 -s 45x30}${execi 60 cp -f ~/Design/icons/weather/$(cat ~/.cache/weather.json | json daily.data.[3].icon).png ~/.cache/weather-5.png}${image ~/.cache/weather-5.png -p 230,165 -s 45x30}
 ${voffset -15}${goto 64}${execi 60 cat ~/.cache/weather.json | json daily.data.[0].temperatureHigh | rev | cut -c 4- | rev}°${goto 140}${execi 60 cat ~/.cache/weather.json | json daily.data.[1].temperatureHigh | rev | cut -c 4- | rev}°${goto 220}${execi 60 cat ~/.cache/weather.json | json daily.data.[2].temperatureHigh | rev | cut -c 4- | rev}°${goto 299}${execi 60 cat ~/.cache/weather.json | json daily.data.[3].temperatureHigh | rev | cut -c 4- | rev}°
 ${goto 64}${execi 60 cat ~/.cache/weather.json | json daily.data.[0].temperatureLow | rev | cut -c 4- | rev}°${goto 140}${execi 60 cat ~/.cache/weather.json | json daily.data.[1].temperatureLow | rev | cut -c 4- | rev}°${goto 220}${execi 60 cat ~/.cache/weather.json | json daily.data.[2].temperatureLow | rev | cut -c 4- | rev}°${goto 299}${execi 60 cat ~/.cache/weather.json | json daily.data.[3].temperatureLow | rev | cut -c 4- | rev}°${font}
+### SYSTEM
 ${voffset 10}${font Exo 2:semibold}${color D14EE3}[ SYSTEM :${color 77d3f4}: ${nodename}${color D14EE3} ] ${voffset 2}${hr 2}${voffset 0}$color
 ${voffset 5}${font Exo 2:semibold:size=11}${color 77d3f4}Kernel Version: ${voffset -3}${font Exo 2:light:size=13}${alignr}${color D77FE3}${kernel}
 ${voffset 0}${font Exo 2:semibold:size=11}${color 77d3f4}System Uptime: ${voffset -3}${font Exo 2:light:size=13}${alignr}${color D77FE3}${uptime}
 ${voffset 0}${font Exo 2:semibold:size=11}${color 77d3f4}Available Updates: ${voffset -3}${font Exo 2:light:size=13}${alignr}${color D77FE3} ${execi 30 checkupdates | wc -l}
 ${voffset 0}${font Exo 2:semibold:size=11}${color 77d3f4}UPS Current Load: ${voffset -3}${font Exo 2:light:size=13}${alignr}${color D77FE3}${execi 30 apcaccess | grep 'LOAD' | awk '{print $3}'}%${font}
+### CPU
 ${voffset 10}${font Exo 2:semibold}${color D14EE3}[ CPU ] ${voffset 2}${hr 2}${voffset 0}$color
 ${image ~/Design/icons/intel-core-i7-logo.png -p 0,375 -s 72x72}${color 77d3f4}${voffset 5}${alignr}Intel® Core™ i7-6800K
 ${voffset 0}${alignr}${color D77FE3}${font Exo 2:light:size=20}${freq_g} GHz  @  ${acpitemp}${font Exo 2:semibold:size=13}°C
-${voffset 10}${color C3EC9C}${font Exo 2:light:size=20} ${cpu cpu0}% ${voffset 3}${alignr}${color 73D216}${cpugraph 32,215} ${voffset -10}${alignr}
+${voffset 10}${color 75b704}${font Exo 2:light:size=20} ${cpu cpu0}% ${voffset 3}${alignr}${cpugraph 32,215} ${voffset -10}${alignr}
 ${voffset -5}${color 777777}${stippled_hr}
+### CPU CORES
 ${voffset -18}${font Exo 2:size=12}${color 77d3f4}${cpu cpu1}%${goto 95}${cpu cpu2}%${goto 176}${cpu cpu3}%${goto 258}${cpu cpu4}%
 ${voffset -4}${color 33b5e5}${cpubar 8,73 cpu1}${goto 95}${cpubar 8,73 cpu2}${goto 176}${cpubar 8,73 cpu3}${goto 258}${cpubar 8,73 cpu4}
 ${voffset -4}${font Exo 2:size=12}${color 77d3f4}${cpu cpu5}%${goto 95}${cpu cpu6}%${goto 176}${cpu cpu7}%${goto 258}${cpu cpu8}%$font
 ${voffset -2}${color 33b5e5}${cpubar 8,73 cpu5}${goto 95}${cpubar 8,73 cpu6}${goto 176}${cpubar 8,73 cpu7}${goto 258}${cpubar 8,73 cpu8}
 ${voffset -2}${font Exo 2:size=12}${color 77d3f4}${cpu cpu9}%${goto 95}${cpu cpu10}%${goto 176}${cpu cpu11}%${goto 258}${cpu cpu12}%$font
 ${voffset -2}${color 33b5e5}${cpubar 8,73 cpu9}${goto 95}${cpubar 8,73 cpu10}${goto 176}${cpubar 8,73 cpu11}${goto 258}${cpubar 8,73 cpu12}$color
+### TOP CPU PROCESSES
 ${voffset 10}${color b4ebff}PROCESS (${processes}) ${goto 157}${color D14EE3}CPU%${color b4ebff}${goto 220}MEM${alignr}PID
 ${voffset -10}${color 777777}${stippled_hr}${voffset -2}
 ${color 77d3f4}${top name 1} ${goto 150}${top cpu 1}%${goto 215}${top mem_res 1}${alignr}${top_mem pid 1}
@@ -82,6 +89,7 @@ ${color 33b5e5}${top name 2} ${goto 150}${top cpu 2}%${goto 215}${top mem_res 2}
 ${color 0099cc}${top name 3} ${goto 150}${top cpu 3}%${goto 215}${top mem_res 3}${alignr}${top_mem pid 3}
 ${color 0099cc}${top name 4} ${goto 150}${top cpu 4}%${goto 215}${top mem_res 4}${alignr}${top_mem pid 4}
 ${color 0099cc}${top name 5} ${goto 150}${top cpu 5}%${goto 215}${top mem_res 5}${alignr}${top_mem pid 5}
+### GPU (Nvidia)
 ${voffset 15}${font Exo 2:semibold}${color D14EE3}[ GPU ] ${voffset 2}${hr 2}${voffset 0}$color
 ${image ~/Design/icons/geforce-logo.png -p 195,777 -s 120x64}
 ${voffset 10}${alignr}${color FFFFFF}${font Exo 2:light:size=40}${nvidia temp}${font Exo 2:Bold:size=15}${voffset -32}°C                 $font
@@ -89,6 +97,7 @@ ${voffset -50}${font Exo 2:bold:size=9}${color 999999}gpu freq$color
 ${voffset -5}${font Exo 2:bold:size=14}${nvidia gpufreq}${font Exo 2:size=12}mhz
 ${font Exo 2:bold:size=9}${color 999999}mem freq$color
 ${voffset -5}${font Exo 2:bold:size=14}${nvidia memfreq}${font Exo 2:size=12}mhz
+### TOP MEM PROCESSES
 ${voffset 15}${font Exo 2:semibold}${color D14EE3}[ MEMORY ] ${voffset 2}${hr 2}${voffset 10}$color
 ${image ~/Design/icons/corsair-logo.png -p 0,905 -s 64x64}${goto 100}${color DAC0DE}${voffset -8}${font Exo 2:bold:size=20}${mem}${color B03BC3}${goto 230}${voffset 4}${memgauge 19,40} ${color DAC0DE}${voffset -4}${font Exo 2:bold:size=14}$memperc%
 ${goto 111}${color D77FE3}${font Exo 2:bold:size=14} / ${memmax}$font${alignr}${membar 12,105}
@@ -99,14 +108,17 @@ ${color D14EE3}${top_mem name 2} ${goto 150}${top_mem mem_res 2}${goto 220}${top
 ${color B03BC3}${top_mem name 3} ${goto 150}${top_mem mem_res 3}${goto 220}${top_mem mem 3}%${alignr}${top_mem pid 3}
 ${color B03BC3}${top_mem name 4} ${goto 150}${top_mem mem_res 4}${goto 220}${top_mem mem 4}%${alignr}${top_mem pid 4}
 ${color B03BC3}${top_mem name 5} ${goto 150}${top_mem mem_res 5}${goto 220}${top_mem mem 5}%${alignr}${top_mem pid 5}
+### DISK
 ${voffset 15}${font Exo 2:semibold}${color D14EE3}[ DISK ] (free) ${voffset 2}${hr 2}$color${font}
 ${voffset 8}/ ${goto 140}R: ${goto 160}${color 33b5e5}${diskio_read /dev/mapper/AntergosVG-AntergosRoot}/s $color${alignr}${goto 240}W: ${color 33b5e5}${diskio_write /dev/mapper/AntergosVG-AntergosRoot}/s$color
 ${voffset 2}${color 77d3f4}${fs_free /} Free (${color 33b5e5}${fs_free_perc /}%${color 77d3f4})$color   $alignr${color 33b5e5}${voffset 2}${fs_bar 10,150 /}$color
 ${voffset 8}/local/dataSSD ${goto 140}R: ${goto 160}${color 33b5e5}${diskio_read /dev/mapper/samsung--ssd--vg-data}/s $color${alignr}${goto 240}W: ${color 33b5e5}${diskio_write /dev/mapper/samsung--ssd--vg-data}/s$color
 ${voffset 2}${color 77d3f4}${fs_free /mnt/local/dataSSD} Free (${color 33b5e5}${fs_free_perc /mnt/local/dataSSD}%${color 77d3f4})$color   $alignr${color 33b5e5}${voffset 2}${fs_bar 10,150 /mnt/local/dataSSD}$color
+### ETHERNET
 ${voffset 13}${font Exo 2:semibold}${color D14EE3}[ ETHERNET ]${voffset 3} ${hr 2}  $color
 ${voffset 5}${font Exo 2:bold:size=10}Down: ${voffset -6}${goto 70}${color 77d3f4}${font Exo 2:bold:size=15}${downspeed eno1}${font Exo 2:bold:size=10}/s $color ${goto 195}Total:  ${alignr}${voffset -6}${font Exo 2:Bold:size=15}${color 77d3f4}${totaldown eno1}${color}${font}
 ${voffset 5}${font Exo 2:bold:size=10}Up: ${voffset -6}${goto 70}${color 77d3f4}${font Exo 2:bold:size=15}${upspeed eno1}${font Exo 2:bold:size=10}/s $color ${goto 195}Total:  ${alignr}${voffset -6}${font Exo 2:Bold:size=15}${color 77d3f4}${totalup eno1}${color}${font}
+### MOPIDY (only if running)
 ${if_mpd_playing}${voffset 15}${font Exo 2:semibold}${color D14EE3}[ MOPiDY :${color b4ebff}: ${mpd_status}${color D14EE3} ] ${voffset 2}${hr 2}${voffset 0}$color${font}
 ${voffset 5}${font Exo 2:bold:size=14}${mpd_title}
 ${color EEEEEE}${font Exo 2:size=17:light}${mpd_artist}
