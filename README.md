@@ -46,6 +46,6 @@ This layout was built for 1440p resolution, but you can adapt it by simply addin
 
 Hope you enjoy using this conky theme, and if you'd like, you can:
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N51HSDE) ...Thanks!
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N51HSDE)
 
-/eof
+Cheers!
