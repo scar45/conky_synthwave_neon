@@ -116,8 +116,8 @@ ${voffset 8}/local/dataSSD ${goto 140}R: ${goto 160}${color 33b5e5}${diskio_read
 ${voffset 2}${color 77d3f4}${fs_free /mnt/local/dataSSD} Free (${color 33b5e5}${fs_free_perc /mnt/local/dataSSD}%${color 77d3f4})$color   $alignr${color 33b5e5}${voffset 2}${fs_bar 10,150 /mnt/local/dataSSD}$color
 ### ETHERNET
 ${voffset 13}${font Exo 2:semibold}${color D14EE3}[ ETHERNET ]${voffset 3} ${hr 2}  $color
-${voffset 5}${font Exo 2:bold:size=10}Down: ${voffset -6}${goto 70}${color 77d3f4}${font Exo 2:bold:size=15}${downspeed eno1}${font Exo 2:bold:size=10}/s $color ${goto 195}Total:  ${alignr}${voffset -6}${font Exo 2:Bold:size=15}${color 77d3f4}${totaldown eno1}${color}${font}
-${voffset 5}${font Exo 2:bold:size=10}Up: ${voffset -6}${goto 70}${color 77d3f4}${font Exo 2:bold:size=15}${upspeed eno1}${font Exo 2:bold:size=10}/s $color ${goto 195}Total:  ${alignr}${voffset -6}${font Exo 2:Bold:size=15}${color 77d3f4}${totalup eno1}${color}${font}
+${voffset 10}${font Exo 2:bold:size=10}Up: ${voffset -6}${goto 70}${color 77d3f4}${font Exo 2:size=15}${upspeed eno1}${font Exo 2:bold:size=10}/s $color ${goto 195}Total:  ${alignr}${voffset -6}${font Exo 2:size=15}${color 77d3f4}${totalup eno1}${color}${font}
+${voffset 10}${font Exo 2:bold:size=10}Down: ${voffset -6}${goto 70}${color 77d3f4}${font Exo 2:size=15}${downspeed eno1}${font Exo 2:bold:size=10}/s $color ${goto 195}Total:  ${alignr}${voffset -6}${font Exo 2:size=15}${color 77d3f4}${totaldown eno1}${color}${font}
 ### MOPIDY (only if running)
 ${if_mpd_playing}${voffset 15}${font Exo 2:semibold}${color D14EE3}[ MOPiDY :${color b4ebff}: ${mpd_status}${color D14EE3} ] ${voffset 2}${hr 2}${voffset 0}$color${font}
 ${voffset 5}${font Exo 2:bold:size=14}${mpd_title}
