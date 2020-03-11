@@ -14,7 +14,7 @@
 
 ### Installation:
 
-- Either clone the repository from Github, or [**download the latest zip**](https://github.com/scar45/conky_synthwave_theme/archive/master.zip) file
+- Either clone the repository from Github, or [**download the latest zip**](https://github.com/scar45/conky_synthwave_neon/archive/master.zip) file
 - Update the default references within `.conkyrc` to point to your local repository folder, or wherever you extracted the zip file. i.e.:
     - Use Find & Replace to modify `~/Design/icons/` in the default config to `_____PATH_TO_REPO_____/icons/`
 - Ensure the **Exo 2 Font** (above) is installed in your custom/system font collection
