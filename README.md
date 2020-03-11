@@ -1,42 +1,49 @@
-# conky_solar_burn
-Conky theme with weather support and a spiffy layout:
+# Synthwave Neon Theme for Conky
 
-![Screenie](solar-burn-conky-screenie.png)
+### Conky theme with weather support and a spiffy layout:
+
+![Screenie](conky-synthwave-theme.png)
 
 ---
 
 ### Dependencies:
 
-- **[conky](https://github.com/brndnmtthws/conky)**  v1.10+, as the new config file uses Lua syntax
-- **[apcaccess](http://linux.die.net/man/8/apcaccess)** for reading the *Load* level of the UPS
-- (Proprietary) **[nVidia drivers](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa)** for reading GPU status (I've only ever tried with these, other GPUs may report fine too ofc)
+- [**conky**](https://github.com/brndnmtthws/conky) v1.10+, as the new config file uses Lua syntax
+- [**Exo 2 Font**](https://www.dafont.com/exo-2.font) for the proper font display, though you can use any you prefer (but may have to update font sizing in the config)
+- [**apcaccess**](http://linux.die.net/man/8/apcaccess) for reading the *Load* level of the UPS (if APC UPS support is desired)
 
 ### Installation:
 
-- Copy the **.conky-google-now** and **.conkyrc** files to your home folder
-- Install the included **Play** font in **~/.fonts/truetype/play**, then update your font cache with: **```sudo fc-cache -fv```**
-- Copy the **logos/** folder anywhere, but *update the 3 references* within **.conkyrc** (**lines 65, 80, 87**) - the same can actually be done with the **.conky-google-now/** folder which contains the weather icons
+- Either clone the repository from Github, or [**download the latest zip**](https://github.com/scar45/conky_synthwave_theme/archive/master.zip) file
+- Update the default references within `.conkyrc` to point to your local repository folder, or wherever you extracted the zip file. i.e.:
+    - Use Find & Replace to modify `~/Design/icons/` in the default config to `_____PATH_TO_REPO_____/icons/`
+- Ensure the **Exo 2 Font** (above) is installed in your custom/system font collection
+- If weather support is desired, see below for how to create the JSON file that conky will parse
+- Run this conky theme config with `conky -c _____PATH_TO_REPO_____/.conkyrc`
 
-### .conkyrc Required edits for personalized info:
+### Weather Support:
 
-- **[line 45]** Edit the Yahoo! Weather URL to search for your city, replacing **```{{{{{YOUR_CITY_NAME}}}}}```** (discard curly brackets) with your desired city -- *if your city name contains spaces, replace any with ```%20```* (you can pop this URL in a browser to inspect the response)
-- **[line 62]** Replace the hardcoded data
-- **[line 65]** (Optional) If the value of ```/proc/cpuinfo``` is too long, it could push the CPU temp out of view -- feel free to hardcode it by replacing ```${execi 300 cat /proc/cpuinfo |grep 'model name'|sort -u|awk -F: '{ print $2; }'|awk -F: \ '{print $1}'}``` with anything
-- **[line 99-101]** Edit the disk paths
-- **[line 103-105]** Edit the disks to monitor r/w speeds
-- **[line 106-108]** Replace the **```eno1```** network interface with whatever yours is
+This theme relies on the DarkSky API to parse weather data from JSON. DarkSky offers [**free rate-limited API**](https://darksky.net/dev) access, so please create an account if you'd like to utilize the weather functionality in this theme. Once you've done so, you can simply pull the weather data every so often by using a **cron job**, or a **systemd timer** (take note of DarkSky's rate limits), which runs a command similar to:
+
+`curl -s -o ~/.cache/weather.json "https://api.darksky.net/forecast/_____YOUR_API_KEY_____/_____LAT_____,_____LONG_____"`
+
+This instructs `curl` to save the output to a JSON file. If you save the JSON output to somewhere other than `~/.cache/weather.json` path, you will need to modify that path in `.conkyrc`.
+
+This theme will parse that JSON file (`~/.cache/weather.json`) on your local machine every so often, and use it to display the correct temperature values, and weather icons.
+
+### .conkyrc edits for personalized info:
+
+- [**line 19**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L19) Set `minimum_height` to your screen resolution height
+- [**line 38**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L38) Set `update_interval` to your desired refresh interval (default 1s)
+- [**line 70**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L70) Remove if you do not use `apcaccess` to obtain UPS status
+- [**line 73**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L73) CPU model and optionally change image
+- [**line 77**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L77) CPU cores (if not 12)
+- [**line 113-116**](https://github.com/scar45/conky_solar_burn/blob/master/.conkyrc#L113) Disk mapping for I/O stats, disk free, etc.
 
 ### Notes:
 
-- This layout was built for 1440p resolution, but you can adapt it to 1080p (or anything else really) by simply adding/removing some elements/lines
-- The modified *conky-google-now* weather parsing code is from [satya164](http://satya164.deviantart.com/art/Conky-Google-Now-366545753)
-- The VClouds weather icons are from [VClouds](http://vclouds.deviantart.com/art/VClouds-Weather-Icons-179152045)
-- The music text that is near the bottom, as well as the Prev/Stop/Play/Next buttons, are not from this Conky theme. They are from the **gmusicbrowser** desktop plugin
+This layout was built for 1440p resolution, but you can adapt it by simply adding/removing anything really.
 
-### Donations from awesome people
+Hope you enjoy using this conky theme!
 
-It has taken me a long while to build and perfect this layout, so if you'd like, you can toss some **Bitcoin** dust my way to:
-
-![Bitcoin and cryptocurrency rock!](icon-btc.png) **```1PaV8LVJTqwt23M9WXK4jcVu2Bp6rWHwnv```**
-
-Thanks, and hope you enjoy!
+/eof
