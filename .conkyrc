@@ -76,11 +76,11 @@ ${voffset 10}${color 75b704}${font Exo 2:light:size=20} ${cpu cpu0}% ${voffset 3
 ${voffset -5}${color 777777}${stippled_hr}
 ### CPU CORES
 ${voffset -18}${font Exo 2:size=12}${color 77d3f4}${cpu cpu1}%${goto 95}${cpu cpu2}%${goto 176}${cpu cpu3}%${goto 258}${cpu cpu4}%
-${voffset -4}${color 33b5e5}${cpubar 8,73 cpu1}${goto 95}${cpubar 8,73 cpu2}${goto 176}${cpubar 8,73 cpu3}${goto 258}${cpubar 8,73 cpu4}
+${voffset -4}${color 33b5e5}${cpubar cpu1 8,73}${goto 95}${cpubar cpu2 8,73}${goto 176}${cpubar cpu3 8,73}${goto 258}${cpubar cpu4 8,73}
 ${voffset -4}${font Exo 2:size=12}${color 77d3f4}${cpu cpu5}%${goto 95}${cpu cpu6}%${goto 176}${cpu cpu7}%${goto 258}${cpu cpu8}%$font
-${voffset -2}${color 33b5e5}${cpubar 8,73 cpu5}${goto 95}${cpubar 8,73 cpu6}${goto 176}${cpubar 8,73 cpu7}${goto 258}${cpubar 8,73 cpu8}
+${voffset -2}${color 33b5e5}${cpubar cpu5 8,73}${goto 95}${cpubar cpu6 8,73}${goto 176}${cpubar cpu7 8,73}${goto 258}${cpubar cpu8 8,73}
 ${voffset -2}${font Exo 2:size=12}${color 77d3f4}${cpu cpu9}%${goto 95}${cpu cpu10}%${goto 176}${cpu cpu11}%${goto 258}${cpu cpu12}%$font
-${voffset -2}${color 33b5e5}${cpubar 8,73 cpu9}${goto 95}${cpubar 8,73 cpu10}${goto 176}${cpubar 8,73 cpu11}${goto 258}${cpubar 8,73 cpu12}$color
+${voffset -2}${color 33b5e5}${cpubar cpu9 8,73}${goto 95}${cpubar cpu10 8,73}${goto 176}${cpubar cpu11 8,73}${goto 258}${cpubar cpu12 8,73}$color
 ### TOP CPU PROCESSES
 ${voffset 10}${color b4ebff}PROCESS (${processes}) ${goto 157}${color D14EE3}CPU%${color b4ebff}${goto 220}MEM${alignr}PID
 ${voffset -10}${color 777777}${stippled_hr}${voffset -2}
